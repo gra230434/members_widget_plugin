@@ -18,17 +18,20 @@ Version 1.1
 > member's email<br>
 > member's phone<br>
 > member's address<br>
-> member's facebook
+> member's facebook<br>
+> member's twitter
+
+
 
 <h2>預計</h2>
-Version 1.2
-> member's facebook icon
-
-Version 1.3
+Version 1.2 (進度:50%)
 > member's youtube<br>
 > member's instagram<br>
 > member's linkedin<br>
 > member's member's summary
+
+Version 1.3
+> member's facebook icon
 
 Version 1.4
 > member's image<br>
