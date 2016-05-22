@@ -33,13 +33,13 @@ class MembersPostWidget extends WP_Widget {
 		extract( $args );
 
 		/* Our variables from the widget settings. */
-		$name = $instance['member_name'];
+		$name         = $instance['member_name'];
 		$introduction = $instance['member_introduction'];
-		$email = $instance['member_email'];
-		$number = $instance['member_phone_number'];
-		$facebook = $instance['member_facebook'];
-		$twitter = $instance['member_twitter'];
-		$address = $instance['member_address'];
+		$email        = $instance['member_email'];
+		$number       = $instance['member_phone_number'];
+		$facebook     = $instance['member_facebook'];
+		$twitter      = $instance['member_twitter'];
+		$address      = $instance['member_address'];
 
 		/* Before widget (defined by themes). */
 		echo $before_widget;
@@ -81,13 +81,13 @@ class MembersPostWidget extends WP_Widget {
 		$instance = $old_instance;
 
 		/* Strip tags for title and name to remove HTML (important for text inputs). */
-		$instance['member_name'] = strip_tags( $new_instance['member_name'] );
+		$instance['member_name']         = strip_tags( $new_instance['member_name'] );
 		$instance['member_introduction'] = strip_tags( $new_instance['member_introduction'] );
-		$instance['member_email'] = strip_tags( $new_instance['member_email'] );
+		$instance['member_email']        = strip_tags( $new_instance['member_email'] );
 		$instance['member_phone_number'] = strip_tags( $new_instance['member_phone_number'] );
-		$instance['member_facebook'] = strip_tags( $new_instance['member_facebook'] );
-		$instance['member_twitter'] = strip_tags( $new_instance['member_twitter'] );
-		$instance['member_address'] = strip_tags( $new_instance['member_address'] );
+		$instance['member_facebook']     = strip_tags( $new_instance['member_facebook'] );
+		$instance['member_twitter']      = strip_tags( $new_instance['member_twitter'] );
+		$instance['member_address']      = strip_tags( $new_instance['member_address'] );
 
 		return $instance;
 	}
@@ -97,49 +97,56 @@ class MembersPostWidget extends WP_Widget {
 
 		/* Set up some default widget settings. */
 		$defaults = array(
-			'member_name' => 'name',
+			'member_name'         => 'name',
 			'member_introduction' => 'Describe yourself here...',
-			'member_email' => '',
+			'member_email'        => '',
 			'member_phone_number' => '',
-			'member_facebook' => '',
-			'member_twitter' => '',
-			'member_address' => ''
+      'member_address'      => '',
+			'member_facebook'     => '',
+			'member_twitter'      => '',
 		   );
-		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
-
+		$instance = wp_parse_args( (array) $instance, $defaults );
+		$mem_email    = ($instance['member_email']=='')        ? " placeholder='enter email'"        : " value=" . $instance['member_email'];
+		$mem_phone    = ($instance['member_phone_number']=='') ? " placeholder='enter phone number'" : " value=" . $instance['member_phone_number'];
+		$mem_address  = ($instance['member_address']=='')      ? " placeholder='enter address'"      : " value=" . $instance['member_address'];
+		$mem_facebook = ($instance['member_facebook']=='')     ? " placeholder='enter facebook'"     : " value=" . $instance['member_facebook'];
+		$mem_twitter  = ($instance['member_twitter']=='')      ? " placeholder='enter twitter'"      : " value=" . $instance['member_twitter']; ?>
+<?php // input name ?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'member_name' ); ?>">Member name:</label>
 			<input id="<?php echo $this->get_field_id( 'member_name' ); ?>" name="<?php echo $this->get_field_name( 'member_name' ); ?>" value="<?php echo $instance['member_name']; ?>" style="width:100%;" >
 		</p>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'member_introduction' ); ?>">Introduction:</label>
-			<textarea class="widefat" rows="16" cols="20" id="<?php echo $this->get_field_id( 'member_introduction' ); ?>" name="<?php echo $this->get_field_name( 'member_introduction' ); ?>" placeholder="<?php echo $instance['member_introduction']; ?>"></textarea>
-		</p>
+<?php // input eamil ?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'member_email' ); ?>">Email:</label>
-			<input id="<?php echo $this->get_field_id( 'member_email' ); ?>" name="<?php echo $this->get_field_name( 'member_email' ); ?>" style="width:100%;" type="email">
-			<pre><?php echo $instance['member_email']; ?></pre>
+      <input id="<?php echo $this->get_field_id( 'member_email' ) ?>" name= "<?php echo $this->get_field_name( 'member_email' ) . $mem_email; ?>"  style='width:100%;' type='email'>
 		</p>
+<?php // input phone ?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'member_phone_number' ); ?>">TEL:</label>
-			<input id="<?php echo $this->get_field_id( 'member_phone_number' ); ?>" name="<?php echo $this->get_field_name( 'member_phone_number' ); ?>" style="width:100%;">
-			<pre><?php echo $instance['member_phone_number']; ?></pre>
+			<input id="<?php echo $this->get_field_id( 'member_phone_number' ) ?>" name= "<?php $this->get_field_name( 'member_phone_number' ) . $mem_phone; ?>"  style='width:100%;' type='tel'>
 		</p>
+<?php // input address ?>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'member_address' ); ?>">Address:</label>
+			<input id="<?php echo $this->get_field_id( 'member_address' ) ?>" name= "<?php $this->get_field_name( 'member_address' ) . $mem_address; ?>"  style='width:100%;' type='text'>
+		</p>
+<?php // input facebook ?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'member_facebook' ); ?>">Facebook:</label>
-			<input id="<?php echo $this->get_field_id( 'member_facebook' ); ?>" name="<?php echo $this->get_field_name( 'member_facebook' ); ?>" style="width:100%;">
-			<pre><?php echo $instance['member_facebook']; ?></pre>
+			<input id="<?php echo $this->get_field_id( 'member_facebook' ) ?>" name= "<?php $this->get_field_name( 'member_facebook' ) . $mem_facebook; ?>"  style='width:100%;' type='url'>
 		</p>
+<?php // input twitter ?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'member_twitter' ); ?>">Twitter:</label>
 			<input id="<?php echo $this->get_field_id( 'member_twitter' ); ?>" name="<?php echo $this->get_field_name( 'member_twitter' ); ?>" style="width:100%;">
-			<pre><?php echo $instance['member_twitter']; ?></pre>
 		</p>
+<?php // input summary ?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'member_address' ); ?>">Address:</label>
-			<input id="<?php echo $this->get_field_id( 'member_address' ); ?>" name="<?php echo $this->get_field_name( 'member_address' ); ?>" style="width:100%;">
-			<pre><?php echo $instance['member_address']; ?></pre>
+			<label for="<?php echo $this->get_field_id( 'member_introduction' ); ?>">Summary:</label>
+			<textarea class="widefat" rows="16" cols="20" id="<?php echo $this->get_field_id( 'member_introduction' ); ?>" name="<?php echo $this->get_field_name( 'member_introduction' ); ?>" placeholder="<?php echo $instance['member_introduction']; ?>"></textarea>
 		</p>
+
 	<?php
 	}
 }

@@ -22,13 +22,16 @@ Version 1.1
 
 <h2>預計</h2>
 Version 1.2
-> supper facebook icon
+> member's facebook icon
 
 Version 1.3
-> supper youtube<br>
-> supper instagram<br>
-> supper linkedin<br>
-> supper member's summary
+> member's youtube<br>
+> member's instagram<br>
+> member's linkedin<br>
+> member's member's summary
+
+Version 1.4
+> member's image<br>
 
 <h2>備註</h2>
 我希望他可以持續更新，這是我的小作品，希望大家會喜歡
