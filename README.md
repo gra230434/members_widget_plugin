@@ -21,16 +21,14 @@ Version 1.1
 > member's facebook<br>
 > member's twitter
 
-
-
-<h2>預計</h2>
-Version 1.2 (進度:50%)
-> member's youtube<br>
+Version 1.2
 > member's instagram<br>
 > member's linkedin<br>
 > member's member's summary
 
+<h2>預計</h2>
 Version 1.3
+> member's youtube<br>
 > member's facebook icon
 
 Version 1.4
