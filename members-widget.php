@@ -81,7 +81,7 @@ class MembersPostWidget extends WP_Widget {
 
 		/* Strip tags for title and name to remove HTML (important for text inputs). */
 		$instance['member_name']         = strip_tags( $new_instance['member_name'] );
-		$instance['member_introduction'] = strip_tags( $new_instance['member_introduction'] );
+		$instance['member_introduction'] = esc_textarea( $new_instance['member_introduction'] );
 		$instance['member_email']        = strip_tags( $new_instance['member_email'] );
 		$instance['member_phone_number'] = strip_tags( $new_instance['member_phone_number'] );
 		$instance['member_facebook']     = esc_url( $new_instance['member_facebook'] );
