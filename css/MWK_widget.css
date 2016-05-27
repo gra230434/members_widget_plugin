@@ -1,0 +1,41 @@
+.MWK_Members_box {
+  padding: 3px 5px;
+}
+
+.MWK_link {
+  float: left;
+}
+
+.MWK_Members_list {
+  height: 30px;
+  margin-bottom: 3px;
+  float: left;
+}
+
+.MWK_Members_list img {
+  margin-right: 5px;
+}
+
+.MWK_member_social_ul {
+  width: 100%;
+  margin: 0;
+}
+
+.MWK_MS_li {
+  width: 20%;
+  float: left;
+}
+
+.MWK_home_member_ul {
+    margin: 0;
+}
+
+.MWK_MSh_li {
+  width: 14%;
+  float: left;
+  padding: 0 1%;
+}
+
+.MWK_clear {
+  clear: both;
+}
