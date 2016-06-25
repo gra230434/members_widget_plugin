@@ -1,3 +1,9 @@
+.MWK_home_image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
 .MWK_Members_box {
   padding: 3px 5px;
 }

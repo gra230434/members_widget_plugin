@@ -44,7 +44,7 @@ class MembersPostWidget extends WP_Widget {
 		$MWK_google       = $instance['member_google'];
 		$MWK_instagram    = $instance['member_instagram'];
 		$MWK_linkedin     = $instance['member_linkedin'];
-		$MWK_image        = $instance['member_image'];
+		$MWK_image        = isset($instance['member_image'])?$instance['member_image']:"";
 
 		/* Before widget (defined by themes). */
 		echo $before_widget;
@@ -87,7 +87,7 @@ class MembersPostWidget extends WP_Widget {
 		  	if ( $MWK_facebook  ) { echo "<li class='MWK_MS_FB MWK_MS_li'><a href=' . $MWK_facebook . '><img src='" . $MWK_plugin_path . "image/MWK_facebook.svg'></a></li>"; }
   			if ( $MWK_twitter   ) { echo "<li class='MWK_MS_TW MWK_MS_li'><a href=' . $MWK_twitter . '>Twitter</a></li>"; }
 	  		if ( $MWK_google    ) { echo "<li class='MWK_MS_G+ MWK_MS_li'><a href=' . $MWK_google . '>Twitter</a></li>"; }
-		  	if ( $MWK_instagram ) { echo "<li class='MWK_MS_ins MWK_MS_li'><a href=' . $MWK_instagram . '>Twitter</a></li>"; }
+		  	if ( $MWK_instagram ) { echo "<li class='MWK_MS_ins MWK_MS_li'><a href='. $MWK_instagram . '>Twitter</a></li>"; }
 			  if ( $MWK_linkedin  ) { echo "<li class='MWK_MS_IN MWK_MS_li'><a href=' . $MWK_linkedin . '>Twitter</a></li>"; }
 		  	echo "<div class='MWK_clear'></div>";
 			  echo '</ul>';
