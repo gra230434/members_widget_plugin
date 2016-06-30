@@ -75,15 +75,15 @@ class MembersPostWidget extends WP_Widget {
 					$social_num ++;
 				}
 	  		if ( $MWK_google ) {
-					$SocialReturn .= "<li class='MWK_MS_G+ MWK_MSh_li'><a href='" . $MWK_google . "'><img src='" . $MWK_plugin_path . "image/MWK_google_plus.svg'></li>";
+					$SocialReturn .= "<li class='MWK_MS_G+ MWK_MSh_li'><a href='" . $MWK_google . "'><img src='" . $MWK_plugin_path . "image/MWK_google_plus.svg'></a></li>";
 					$social_num ++;
 				}
 		  	if ( $MWK_instagram ) {
-					$SocialReturn .= "<li class='MWK_MS_ins MWK_MSh_li'><a href='" . $MWK_instagram . "'><img src='" . $MWK_plugin_path . "image/MWK_instagram.svg'></li>";
+					$SocialReturn .= "<li class='MWK_MS_ins MWK_MSh_li'><a href='" . $MWK_instagram . "'><img src='" . $MWK_plugin_path . "image/MWK_instagram.svg'></a></li>";
 					$social_num ++;
 				}
 			  if ( $MWK_linkedin ) {
-					$SocialReturn .= "<li class='MWK_MS_IN MWK_MSh_li'><a href='" . $MWK_linkedin . "'><img src='" . $MWK_plugin_path . "image/MWK_linkedin.svg'></li>";
+					$SocialReturn .= "<li class='MWK_MS_IN MWK_MSh_li'><a href='" . $MWK_linkedin . "'><img src='" . $MWK_plugin_path . "image/MWK_linkedin.svg'></a></li>";
 					$social_num ++;
 				}
 
