@@ -32,14 +32,18 @@
   float: left;
 }
 
+.MWK_home_member {
+  margin: 0 auto;
+}
+
 .MWK_home_member_ul {
   margin: 0;
 }
 
 .MWK_MSh_li {
-  width: 14%;
   float: left;
-  padding: 0 1%;
+  width: 22px;
+  margin: 0 4px;
 }
 
 .MWK_clear {

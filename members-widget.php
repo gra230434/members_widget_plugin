@@ -58,19 +58,43 @@ class MembersPostWidget extends WP_Widget {
 				echo "<div class='MWK_home_image'><img src='" . $MWK_plugin_path . "image/Person-icon-grey.JPG'></div>";
 			}
 			echo $before_title . $MWK_name . $after_title;
-			echo "<div id='Members' class='MWK_home_member'>";
-			if ( $MWK_email || $MWK_facebook || $MWK_twitter || $MWK_google || $MWK_instagram || $MWK_linkedin ) {
-	   		echo "<ul class='MWK_home_member_ul'>";
-				if ( $MWK_email     ) { echo "<li class='MWK_MS_EM MWK_MSh_li'><a href='mailto:"  . $MWK_email . "'><img src='" . $MWK_plugin_path . "image/mail-green.png'></a></li>"; }
-		  	if ( $MWK_facebook  ) { echo "<li class='MWK_MS_FB MWK_MSh_li'><a href='"      . $MWK_facebook . "'><img src='" . $MWK_plugin_path . "image/MWK_facebook.svg'></a></li>"; }
-  			if ( $MWK_twitter   ) { echo "<li class='MWK_MS_TW MWK_MSh_li'><a href='"       . $MWK_twitter . "'><img src='" . $MWK_plugin_path . "image/MWK_twitter.svg'></a></li>"; }
-	  		if ( $MWK_google    ) { echo "<li class='MWK_MS_G+ MWK_MSh_li'><a href='"        . $MWK_google . "'><img src='" . $MWK_plugin_path . "image/MWK_google_plus.svg'></li>"; }
-		  	if ( $MWK_instagram ) { echo "<li class='MWK_MS_ins MWK_MSh_li'><a href='"    . $MWK_instagram . "'><img src='" . $MWK_plugin_path . "image/MWK_instagram.svg'></li>"; }
-			  if ( $MWK_linkedin  ) { echo "<li class='MWK_MS_IN MWK_MSh_li'><a href='"      . $MWK_linkedin . "'><img src='" . $MWK_plugin_path . "image/MWK_linkedin.svg'></li>"; }
-		  	echo "<div class='MWK_clear'></div>";
-			  echo '</ul>';
-		  }
-			echo "</div>";
+
+			$social_num = 0;
+			$SocialReturn = "";
+			if  ( $MWK_email || $MWK_facebook || $MWK_twitter || $MWK_google || $MWK_instagram || $MWK_linkedin ) {
+				if ( $MWK_email ) {
+					$SocialReturn .= "<li class='MWK_MS_EM MWK_MSh_li'><a href='mailto:" . $MWK_email . "'><img src='" . $MWK_plugin_path . "image/mail-green.png'></a></li>";
+					$social_num ++;
+				}
+		  	if ( $MWK_facebook ) {
+					$SocialReturn .= "<li class='MWK_MS_FB MWK_MSh_li'><a href='" . $MWK_facebook . "'><img src='" . $MWK_plugin_path . "image/MWK_facebook.svg'></a></li>";
+					$social_num ++;
+				}
+  			if ( $MWK_twitter ) {
+					$SocialReturn .= "<li class='MWK_MS_TW MWK_MSh_li'><a href='" . $MWK_twitter . "'><img src='" . $MWK_plugin_path . "image/MWK_twitter.svg'></a></li>";
+					$social_num ++;
+				}
+	  		if ( $MWK_google ) {
+					$SocialReturn .= "<li class='MWK_MS_G+ MWK_MSh_li'><a href='" . $MWK_google . "'><img src='" . $MWK_plugin_path . "image/MWK_google_plus.svg'></li>";
+					$social_num ++;
+				}
+		  	if ( $MWK_instagram ) {
+					$SocialReturn .= "<li class='MWK_MS_ins MWK_MSh_li'><a href='" . $MWK_instagram . "'><img src='" . $MWK_plugin_path . "image/MWK_instagram.svg'></li>";
+					$social_num ++;
+				}
+			  if ( $MWK_linkedin ) {
+					$SocialReturn .= "<li class='MWK_MS_IN MWK_MSh_li'><a href='" . $MWK_linkedin . "'><img src='" . $MWK_plugin_path . "image/MWK_linkedin.svg'></li>";
+					$social_num ++;
+				}
+
+			}
+
+			if ( $SocialReturn ) {
+				echo "<div id='Members' class='MWK_home_member' style='width:" . $social_num * 30 . "px'><ul class='MWK_home_member_ul'>";
+				echo $SocialReturn;
+				echo "<div class='MWK_clear'></div></ul></div>";
+			}
+			// is_home
 		} else {
 			echo $before_title . $MWK_name . $after_title;
 		  echo "<div id='Members' class='MWK_Members_box'>";
