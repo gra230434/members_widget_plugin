@@ -182,17 +182,17 @@ class MembersPostWidget extends WP_Widget {
 		</p>
 <?php // input twitter ?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'member_google' ); ?>">Twitter:</label>
+			<label for="<?php echo $this->get_field_id( 'member_google' ); ?>">Google Plus:</label>
 			<input id="<?php echo $this->get_field_id( 'member_google' ); ?>" name="<?php echo $this->get_field_name( 'member_google' ); ?>" <?php echo $mem_google; ?> style='width:100%;' type='url'>
 		</p>
 <?php // input twitter ?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'member_instagram' ); ?>">Twitter:</label>
+			<label for="<?php echo $this->get_field_id( 'member_instagram' ); ?>">Instagram:</label>
 			<input id="<?php echo $this->get_field_id( 'member_instagram' ); ?>" name="<?php echo $this->get_field_name( 'member_instagram' ); ?>" <?php echo $mem_instagram; ?> style='width:100%;' type='url'>
 		</p>
 <?php // input twitter ?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'member_linkedin' ); ?>">Twitter:</label>
+			<label for="<?php echo $this->get_field_id( 'member_linkedin' ); ?>">Linkedin:</label>
 			<input id="<?php echo $this->get_field_id( 'member_linkedin' ); ?>" name="<?php echo $this->get_field_name( 'member_linkedin' ); ?>" <?php echo $mem_linkedin; ?> style='width:100%;' type='url'>
 		</p>
 <?php // input image url ?>
