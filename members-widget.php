@@ -22,10 +22,14 @@ function postmembers_register_widgets() {
 class MembersPostWidget extends WP_Widget {
 
 // init
-	function MembersPostWidget() {
-		$widget_ops = array( 'classname' => 'MembersPostWidget', 'description' => 'Displays members in your web' );
-
-		parent::__construct( 'Members_Post_Widget', 'Members Post', $widget_ops );
+	public function __construct() {
+		parent::__construct(
+			'Members_Post_Widget',
+			'Members Post',
+			array(
+				'description' => 'Displays members in your web',
+			)
+		);
 	}
 
 // front-end
@@ -34,17 +38,17 @@ class MembersPostWidget extends WP_Widget {
 
     $MWK_plugin_path = plugin_dir_url( __FILE__ );
 		/* Our variables from the widget settings. */
-		$MWK_name         = $instance['member_name'];
-		$MWK_introduction = $instance['member_introduction'];
-		$MWK_email        = $instance['member_email'];
-		$MWK_number       = $instance['member_phone_number'];
-		$MWK_address      = $instance['member_address'];
-		$MWK_facebook     = $instance['member_facebook'];
-		$MWK_twitter      = $instance['member_twitter'];
-		$MWK_google       = $instance['member_google'];
-		$MWK_instagram    = $instance['member_instagram'];
-		$MWK_linkedin     = $instance['member_linkedin'];
-		$MWK_image        = isset($instance['member_image'])?$instance['member_image']:"";
+		$MWK_name          = $instance['member_name'];
+		$MWK_introduction  = $instance['member_introduction'];
+		$MWK_email         = $instance['member_email'];
+		$MWK_number        = $instance['member_phone_number'];
+		$MWK_address       = $instance['member_address'];
+		$MWK_facebook      = $instance['member_facebook'];
+		$MWK_twitter       = $instance['member_twitter'];
+		$MWK_google        = $instance['member_google'];
+		$MWK_instagram     = $instance['member_instagram'];
+		$MWK_linkedin      = $instance['member_linkedin'];
+		$MWK_image         = isset($instance['member_image'])?$instance['member_image']:"";
 
 		/* Before widget (defined by themes). */
 		echo $before_widget;
@@ -182,7 +186,7 @@ class MembersPostWidget extends WP_Widget {
 <?php // input eamil ?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'member_email' ); ?>">Email:</label>
-      <input id="<?php echo $this->get_field_id( 'member_email' ) ?>" name="<?php echo $this->get_field_name( 'member_email' ); ?>" <?php echo $mem_email; ?> style='width:100%;' type='email'>
+			<input id="<?php echo $this->get_field_id( 'member_email' ) ?>" name="<?php echo $this->get_field_name( 'member_email' ); ?>" <?php echo $mem_email; ?> style='width:100%;' type='email'>
 		</p>
 <?php // input phone ?>
 		<p>
@@ -204,26 +208,26 @@ class MembersPostWidget extends WP_Widget {
 			<label for="<?php echo $this->get_field_id( 'member_twitter' ); ?>">Twitter:</label>
 			<input id="<?php echo $this->get_field_id( 'member_twitter' ); ?>" name="<?php echo $this->get_field_name( 'member_twitter' ); ?>" <?php echo $mem_twitter; ?> style='width:100%;' type='url'>
 		</p>
-<?php // input twitter ?>
+<?php // input Google ?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'member_google' ); ?>">Google Plus:</label>
 			<input id="<?php echo $this->get_field_id( 'member_google' ); ?>" name="<?php echo $this->get_field_name( 'member_google' ); ?>" <?php echo $mem_google; ?> style='width:100%;' type='url'>
 		</p>
-<?php // input twitter ?>
+<?php // input Instagram ?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'member_instagram' ); ?>">Instagram:</label>
 			<input id="<?php echo $this->get_field_id( 'member_instagram' ); ?>" name="<?php echo $this->get_field_name( 'member_instagram' ); ?>" <?php echo $mem_instagram; ?> style='width:100%;' type='url'>
 		</p>
-<?php // input twitter ?>
+<?php // input Linkedin ?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'member_linkedin' ); ?>">Linkedin:</label>
 			<input id="<?php echo $this->get_field_id( 'member_linkedin' ); ?>" name="<?php echo $this->get_field_name( 'member_linkedin' ); ?>" <?php echo $mem_linkedin; ?> style='width:100%;' type='url'>
 		</p>
 <?php // input image url ?>
-    <p>
-    	<label for="<?php echo $this->get_field_id( 'member_image' ); ?>">Image url:</label>
-     	<input id="<?php echo $this->get_field_id( 'member_image' ); ?>" name="<?php echo $this->get_field_name( 'member_image' ); ?>" <?php echo $mem_image; ?> style='width:100%;' type='url'>
-    </p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'member_image' ); ?>">Image url:</label>
+			<input id="<?php echo $this->get_field_id( 'member_image' ); ?>" name="<?php echo $this->get_field_name( 'member_image' ); ?>" <?php echo $mem_image; ?> style='width:100%;' type='url'>
+		</p>
 <?php // input summary ?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'member_introduction' ); ?>">Summary:</label>
