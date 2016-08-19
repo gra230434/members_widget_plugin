@@ -158,7 +158,7 @@ class MembersPostWidget extends WP_Widget {
 			'member_introduction' => '',
 			'member_email'        => '',
 			'member_phone_number' => '',
-      'member_address'      => '',
+			'member_address'      => '',
 			'member_facebook'     => '',
 			'member_twitter'      => '',
 			'member_google'       => '',
